@@ -36,13 +36,10 @@ var inputValue = $('#input-City').val();
         var cityName = data.city.name;
         var TempK = data.list[0].main.temp;
         var TempC = TempK - 273.15;
-        var tempCelcius = TempC.toFixed(2) + "°C";
-        var Date = data.list[0].dt_txt
-        var WindSpeed = data.list[0].wind.speed
-        var humidity = data.list[0].main.humidity
-       
-       console.log(Date);
-       console.log(TempC.toFixed(2));
+        var tempCelcius =  "🌡Temp: " +TempC.toFixed(2) + "°C";
+        var Date = data.list[0].dt_txt;
+        var WindSpeed = "🌄Wind:" + data.list[0].wind.speed
+        var humidity = "☁️Humidity:" + data.list[0].main.humidity
 
 
       function appendButton () {   
@@ -64,24 +61,75 @@ var inputValue = $('#input-City').val();
             function DisplayOnDashboard(){
                 $('#Weather-Dashboard').empty();
 
-                $('#city-name').text(cityName);
-                var tempR = "Temp:"
-
+                // create element for weather information
+                 var infoDiv = $('<div>');
+                var cityText = $('<h4>')
+                var tempText = $('<h5>')
+                var windText = $('<h5>')
+                var humidityText = $('<h5>')
                 var currentDate = dayjs();
                 var formattedDate = currentDate.format(' (D/MM/YYYY)');
-               var Day = $('<span>');
-               Day.text(formattedDate);
-                $('#Weather-Dashboard').append(Day);
-                var tempDiv = $('<h5>');
-                tempDiv.text(tempCelcius);
-                $('#Weather-Dashboard').append(tempR,tempDiv);
-
-
+                // Assign inner text for each Element 
+                cityText.text(cityName  + formattedDate);
+                tempText.text(tempCelcius);
+                windText.text(WindSpeed);
+                humidityText.text(humidity);
+                // Append info on weather dashboard div
+                infoDiv.append(cityText, tempText,windText,humidityText);
+                $('#Weather-Dashboard').append(infoDiv); 
             }
+
             DisplayOnDashboard();
-               
+         
+          function FiveDayForcast(){
+         
+
+          function day1(){
+            
+            $('#forecast-1').empty();
+
+            var i = 8;
+            var TempK = data.list[i].main.temp;
+            var TempC = TempK - 273.15;
+            var tempCelcius =  "Temp: " +TempC.toFixed(2) + "°C";
+            var WindSpeed = "Wind:" + data.list[i].wind.speed
+            var humidity = "Humidity:" + data.list[i].main.humidity
+    
+            var currentDate = dayjs();
+            var nextDay = currentDate.add(1, 'day');
+            var formattedDate = nextDay.format(' (D/MM/YYYY)');
+                var dayText = $('<h5>')
+                var tempText = $('<p>')
+                var windText = $('<p>')
+                var humidityText = $('<p>')
+                
+                dayText.text(formattedDate);
+                tempText.text(tempCelcius);
+                windText.text(WindSpeed);
+                humidityText.text(humidity);
+
+                var day1Div = $('<div>');
+                day1Div.append(dayText,tempText,windText,humidityText)
+
+                $('#forecast-1').append(day1Div)
+
+
+                console.log(formattedDate,tempCelcius,WindSpeed,humidity);
+                
               
+          }
+        day1();
+         
+
+          } 
+          
+          FiveDayForcast();
+
+        // console.log(data.list[0].dt_txt); 
            
+
+
+
 
 
     })
