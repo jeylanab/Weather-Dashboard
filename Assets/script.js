@@ -85,7 +85,7 @@ var inputValue = $('#input-City').val();
          
 
           function day1(){
-            
+
             $('#forecast-1').empty();
 
             var i = 8;
@@ -120,6 +120,145 @@ var inputValue = $('#input-City').val();
           }
         day1();
          
+        function day2(){
+            
+            $('#forecast-2').empty();
+
+            var i = 16;
+            var TempK = data.list[i].main.temp;
+            var TempC = TempK - 273.15;
+            var tempCelcius =  "Temp: " +TempC.toFixed(2) + "°C";
+            var WindSpeed = "Wind:" + data.list[i].wind.speed
+            var humidity = "Humidity:" + data.list[i].main.humidity
+    
+            var currentDate = dayjs();
+            var nextDay = currentDate.add(2, 'day');
+            var formattedDate = nextDay.format(' (D/MM/YYYY)');
+                var dayText = $('<h5>')
+                var tempText = $('<p>')
+                var windText = $('<p>')
+                var humidityText = $('<p>')
+                
+                dayText.text(formattedDate);
+                tempText.text(tempCelcius);
+                windText.text(WindSpeed);
+                humidityText.text(humidity);
+
+                var day2Div = $('<div>');
+                day2Div.append(dayText,tempText,windText,humidityText)
+
+                $('#forecast-2').append(day2Div)
+
+
+                console.log(formattedDate,tempCelcius,WindSpeed,humidity);
+                
+          }
+        day2(); 
+
+        function day3(){
+            
+            $('#forecast-3').empty();
+
+            var i = 24;
+            var TempK = data.list[i].main.temp;
+            var TempC = TempK - 273.15;
+            var tempCelcius =  "Temp: " +TempC.toFixed(2) + "°C";
+            var WindSpeed = "Wind:" + data.list[i].wind.speed
+            var humidity = "Humidity:" + data.list[i].main.humidity
+    
+            var currentDate = dayjs();
+            var nextDay = currentDate.add(3, 'day');
+            var formattedDate = nextDay.format(' (D/MM/YYYY)');
+                var dayText = $('<h5>')
+                var tempText = $('<p>')
+                var windText = $('<p>')
+                var humidityText = $('<p>')
+                
+                dayText.text(formattedDate);
+                tempText.text(tempCelcius);
+                windText.text(WindSpeed);
+                humidityText.text(humidity);
+
+                var day3Div = $('<div>');
+                day3Div.append(dayText,tempText,windText,humidityText)
+
+                $('#forecast-3').append(day3Div)
+
+
+                console.log(formattedDate,tempCelcius,WindSpeed,humidity);
+                
+          }
+        day3(); 
+        function day4(){
+            
+            $('#forecast-4').empty();
+
+            var i = 32;
+            var TempK = data.list[i].main.temp;
+            var TempC = TempK - 273.15;
+            var tempCelcius =  "Temp: " +TempC.toFixed(2) + "°C";
+            var WindSpeed = "Wind:" + data.list[i].wind.speed
+            var humidity = "Humidity:" + data.list[i].main.humidity
+    
+            var currentDate = dayjs();
+            var nextDay = currentDate.add(4, 'day');
+            var formattedDate = nextDay.format(' (D/MM/YYYY)');
+                var dayText = $('<h5>')
+                var tempText = $('<p>')
+                var windText = $('<p>')
+                var humidityText = $('<p>')
+                
+                dayText.text(formattedDate);
+                tempText.text(tempCelcius);
+                windText.text(WindSpeed);
+                humidityText.text(humidity);
+
+                var day4Div = $('<div>');
+                day4Div.append(dayText,tempText,windText,humidityText)
+
+                $('#forecast-4').append(day4Div)
+
+
+                console.log(formattedDate,tempCelcius,WindSpeed,humidity);
+                
+          }
+        day4(); 
+
+        function day5(){
+            
+            $('#forecast-5').empty();
+
+            var i = 39;
+            var TempK = data.list[i].main.temp;
+            var TempC = TempK - 273.15;
+            var tempCelcius =  "Temp: " +TempC.toFixed(2) + "°C";
+            var WindSpeed = "Wind:" + data.list[i].wind.speed
+            var humidity = "Humidity:" + data.list[i].main.humidity
+    
+            var currentDate = dayjs();
+            var nextDay = currentDate.add(5, 'day');
+            var formattedDate = nextDay.format(' (D/MM/YYYY)');
+                var dayText = $('<h5>')
+                var tempText = $('<p>')
+                var windText = $('<p>')
+                var humidityText = $('<p>')
+                
+                dayText.text(formattedDate);
+                tempText.text(tempCelcius);
+                windText.text(WindSpeed);
+                humidityText.text(humidity);
+
+                var day5Div = $('<div>');
+                day5Div.append(dayText,tempText,windText,humidityText)
+
+                $('#forecast-5').append(day5Div)
+
+
+                console.log(formattedDate,tempCelcius,WindSpeed,humidity);
+                
+          }
+        day5(); 
+
 
           } 
           
