@@ -1,22 +1,3 @@
-// TODO: When a user searches for a city they are presented with current and future conditions for that city
-
-//  TODO:and that city is added to the search history
-//  TODO:When a user views the current weather conditions for that city they are presented with:
-                // TODO: The city name
-                // TODO: The date
-                // TODO: An icon representation of weather conditions
-                // TODO: The temperature
-                // TODO: The humidity
-                // TODO:The humidity
-//TODO: The wind speed
-//TODO:When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
-//  TODO: The date
-//  TODO:An icon representation of weather conditions
-//  TODO:The temperature
-//  TODO:The humidity
-//TODO:When a user click on a city in the search history they are again presented with current and future conditions for that city -->
-
-
 
 $('#searchTab').on("click", function(){
     
@@ -82,7 +63,14 @@ var inputValue = $('#input-City').val();
             DisplayOnDashboard();
          
           function FiveDayForcast(){
-         
+            $('#view-text').empty();
+          
+
+         var viewTitle = $('<h3>');
+          viewTitle.text('View next five Days forecast of ' + cityName);
+          $('#view-text').append(viewTitle)
+
+
 
           function day1(){
 
@@ -110,7 +98,8 @@ var inputValue = $('#input-City').val();
 
                 var day1Div = $('<div>');
                 day1Div.append(dayText,tempText,windText,humidityText)
-
+                day1Div.addClass('dayForecast');
+                
                 $('#forecast-1').append(day1Div)
 
 
@@ -146,7 +135,8 @@ var inputValue = $('#input-City').val();
 
                 var day2Div = $('<div>');
                 day2Div.append(dayText,tempText,windText,humidityText)
-
+                day2Div.addClass('dayForecast');
+                   
                 $('#forecast-2').append(day2Div)
 
 
@@ -181,7 +171,8 @@ var inputValue = $('#input-City').val();
 
                 var day3Div = $('<div>');
                 day3Div.append(dayText,tempText,windText,humidityText)
-
+                day3Div.addClass('dayForecast');
+                
                 $('#forecast-3').append(day3Div)
 
 
@@ -215,7 +206,8 @@ var inputValue = $('#input-City').val();
 
                 var day4Div = $('<div>');
                 day4Div.append(dayText,tempText,windText,humidityText)
-
+                day4Div.addClass('dayForecast');
+                 
                 $('#forecast-4').append(day4Div)
 
 
@@ -250,7 +242,7 @@ var inputValue = $('#input-City').val();
 
                 var day5Div = $('<div>');
                 day5Div.append(dayText,tempText,windText,humidityText)
-
+                day5Div.addClass('dayForecast');
                 $('#forecast-5').append(day5Div)
 
 

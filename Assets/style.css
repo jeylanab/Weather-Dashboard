@@ -93,7 +93,10 @@
     display: inline;
 
   }
-  /* #right-hand{
-    box-shadow: 2px 2px 5px rgba(33, 245, 18, 0.2);
-    border-radius: 10px;
-  } */
+  .dayForecast {
+    background-color: rgb(5, 11, 51);
+    padding: 4px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+  }
