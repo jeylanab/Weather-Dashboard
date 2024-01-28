@@ -1,5 +1,6 @@
 
 $('#searchTab').on("click", function(){
+  $('#viewMode').addClass('viewMode')
     
 var inputValue = $('#input-City').val();
     
@@ -250,7 +251,7 @@ var inputValue = $('#input-City').val();
                 
           }
         day5(); 
-
+             
 
           } 
           

@@ -89,12 +89,23 @@
     padding: 10px;
 
   }
+  #entry-class {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: x-large;
+  }
+  .viewMode {
+    display: none;
+  }
+
   #city-name {
     display: inline;
 
   }
   .dayForecast {
-    background-color: rgb(5, 11, 51);
+    box-shadow: ();
+    border-radius: 5px;
+    background-color: rgb(10, 46, 16);
     padding: 4px;
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
