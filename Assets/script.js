@@ -24,18 +24,6 @@ var inputValue = $('#input-City').val();
         var humidity = "☁️Humidity:" + data.list[0].main.humidity
 
 
-      function appendButton () {   
-            //create element to append new Button on 
-            var newButton = $('<button>');
-            // add text to the button
-            newButton.text(data.city.name);
-            // add class to the button
-            newButton.addClass('new-button')
-            //  append to new button div
-            $('#added-city').append(newButton);
-            $('#input-City').val("");
-            }
-            appendButton(); 
 
           
              
@@ -253,11 +241,31 @@ var inputValue = $('#input-City').val();
         day5(); 
              
 
-          } 
-          
+          }  
           FiveDayForcast();
 
-        // console.log(data.list[0].dt_txt); 
+          var count = 0;
+          function appendButton () {   
+            //create element to append new Button on 
+            var newButton = $('<button>');
+            // add text to the button
+            newButton.text(data.city.name);
+            // add class to the button
+            newButton.addClass('new-button').attr('id', 'newButton');
+            //  append to new button div
+            $('#added-city').append(newButton);
+            count++;
+
+            $('#input-City').val("");
+            }
+            appendButton(); 
+            
+      // var newlyButton = $('#newButton').
+      // $('#newButton').on("click", function(){
+      //   DisplayOnDashboard();
+      //   FiveDayForcast();
+      //   console.log("clicked")
+      // })
            
 
 
