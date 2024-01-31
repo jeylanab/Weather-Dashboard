@@ -47,6 +47,15 @@ var inputValue = $('#input-City').val();
                 // Append info on weather dashboard div
                 infoDiv.append(cityText, tempText,windText,humidityText);
                 $('#Weather-Dashboard').append(infoDiv); 
+
+                // if(tempCelcius>10){
+                //   // create element 
+                //   var cloudImg = $('<img>')
+                //   // Add content to the text
+                //   cloudImg.attr('src', /Assets/Images/cloudy.png)
+                //   // Append to the html
+                //   .append(cloudImg);
+                // }
             }
 
             DisplayOnDashboard();
